@@ -3,30 +3,33 @@ import java.awt.*;
 
 public class Test {
 
-    public static void main(String[] args)
-    {
-        JFrame f = new JFrame("Hello");
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Currency Converter");
+        JPanel panel = new JPanel();
+        frame.getContentPane();
+        JButton button = new JButton("Historical Exchange Rates");
+        JButton button2 = new JButton("Live Exchange Rates");
+        Dimension size = button.getPreferredSize();
+        Icon icon = new ImageIcon("/Users/christopher/Desktop/switch1.png");
+        JButton button3 = new JButton(icon);
+        button.setBounds(150, 180, size.width, size.height);
+        Dimension size2 = button2.getPreferredSize();
+        button2.setBounds(400,180,size2.width,size2.height);
+        button3.setBounds(600,300,50,50);
+        JButton button4 = new JButton("Convert");
+        Dimension size4 = button4.getPreferredSize();
+        button4.setBounds(1000,500,size4.width,size4.height);
 
-        JPanel MyPanel = new JPanel();
-
-        MyPanel.setLayout( new FlowLayout() );    // Demo flow layout
-
-        JButton x1 = new JButton("I am x1");
-        JButton x2 = new JButton("I am x2");
-        JButton x3 = new JButton("I am x3");
-        JButton x4 = new JButton("I am x4");
-        JButton x5 = new JButton("I am x5");
-
-        MyPanel.add(x1);           // Add JButtons using Flow Layout
-        MyPanel.add(x2);
-        MyPanel.add(x3);
-        MyPanel.add(x4);
-        MyPanel.add(x5);
-
-        f.getContentPane().add(MyPanel, "Center"); // Paste MyPanel in center
-        // of the contentPane
-        f.setSize(300, 300);
-        f.setVisible(true);
+        panel.setLayout(null);
+        panel.add(button);
+        panel.add(button2);
+        panel.add(button3);
+        panel.add(button4);
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.add(panel);
+        frame.setSize(1200, 600);
+        frame.setVisible(true);
     }
 
 }

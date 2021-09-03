@@ -7,7 +7,7 @@ public class HomePage {
 
 public HomePage(){
 
-    JFrame f = new JFrame("Hello");
+    JFrame f = new JFrame("Currency Converter");
 
     JPanel MyPanel = new JPanel();
 
@@ -17,21 +17,21 @@ public HomePage(){
     JButton historicalExchangeRate = new JButton("Historical Exchange Rate");
     Icon icon = new ImageIcon("/Users/christopher/Desktop/switch1.png");
     JButton flipConversions = new JButton(icon);
-
     JButton convert = new JButton("Convert");
     MyPanel.add(liveExchangeRate);
     MyPanel.add(historicalExchangeRate);
     MyPanel.add(flipConversions);
     MyPanel.add(convert);
 
-    f.getContentPane().add(MyPanel, "Center");
-    f.setSize(300, 300);
+    //f.getContentPane().add(MyPanel, "Center");
+    f.setSize(1200,600);
     f.setVisible(true);
 
 }
 
 public static void main(String[] args){
     new HomePage();
+
 }
 
 }
