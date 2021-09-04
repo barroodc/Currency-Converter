@@ -17,7 +17,7 @@ public class Test {
         button.setBounds(150, 180, size.width, size.height);
         Dimension size2 = button2.getPreferredSize();
         button2.setBounds(400, 180, size2.width, size2.height);
-        button3.setBounds(600, 315, 50, 50);
+        button3.setBounds(600, 310, 50, 50);
         JButton button4 = new JButton("Convert");
         Dimension size4 = button4.getPreferredSize();
         button4.setBounds(1000, 500, size4.width, size4.height);
@@ -34,16 +34,37 @@ public class Test {
         frame.setSize(1200, 600);
         frame.setVisible(true);
 
-        String country[] = {"India", "Aus", "U.S.A", "England", "Newzealand"};
-        JComboBox cb = new JComboBox(country);
+        JLabel amount = new JLabel("Amount");
+        amount.setBounds(50,50,200,30);
+        frame.add(amount);
+        panel.add(amount);
+
+        JTextField motto1 = new JTextField();
+        motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN,20));
+        motto1.setBounds(150, 325, 200, 30);
+        frame.add(motto1);
+        panel.add(motto1);
+
+        String countryFrom[] = {"India", "Aus", "U.S.A", "England", "Newzealand"};
+        JComboBox cb = new JComboBox(countryFrom);
         cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
-        cb.setBounds(400, 325, 180, 20);
+        cb.setBounds(450, 325, 150, 20);
         frame.add(cb);
         frame.setLayout(null);
         frame.setSize(400, 500);
         frame.setVisible(true);
-
         panel.add(cb);
+
+
+        String countryTo[] = {"India", "Aus", "U.S.A", "England", "Newzealand"};
+        JComboBox cb2 = new JComboBox(countryTo);
+        cb2.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
+        cb2.setBounds(675, 325, 180, 20);
+        frame.add(cb2);
+        frame.setLayout(null);
+        frame.setSize(400, 500);
+        frame.setVisible(true);
+        panel.add(cb2);
 
     }
 
