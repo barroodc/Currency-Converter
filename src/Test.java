@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Test {
 
@@ -14,11 +16,12 @@ public class Test {
         JButton button3 = new JButton(icon);
         button.setBounds(150, 180, size.width, size.height);
         Dimension size2 = button2.getPreferredSize();
-        button2.setBounds(400,180,size2.width,size2.height);
-        button3.setBounds(600,300,50,50);
+        button2.setBounds(400, 180, size2.width, size2.height);
+        button3.setBounds(600, 300, 50, 50);
         JButton button4 = new JButton("Convert");
         Dimension size4 = button4.getPreferredSize();
-        button4.setBounds(1000,500,size4.width,size4.height);
+        button4.setBounds(1000, 500, size4.width, size4.height);
+
 
         panel.setLayout(null);
         panel.add(button);
@@ -30,6 +33,17 @@ public class Test {
         frame.add(panel);
         frame.setSize(1200, 600);
         frame.setVisible(true);
+
+        String country[] = {"India", "Aus", "U.S.A", "England", "Newzealand"};
+        JComboBox cb = new JComboBox(country);
+        cb.setBounds(50, 50, 90, 20);
+        frame.add(cb);
+        frame.setLayout(null);
+        frame.setSize(400, 500);
+        frame.setVisible(true);
+
     }
 
 }
+
+
