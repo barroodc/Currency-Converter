@@ -2,10 +2,25 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class HomePage {
 
+        public static String[] list = CurrenciesList.theWayHome;
+        public static String[] lineArray = new String[176];
+
+
+
+
+
+        public static String[] getLineArray() {
+                return lineArray;
+        }
+
+        public static void setLineArray(String[] lineArray) {
+                HomePage.lineArray = lineArray;
+        }
 
         public static void main(String[] args) throws IOException {
         JFrame frame = new JFrame("Currency Converter");
@@ -64,7 +79,7 @@ public class HomePage {
         motto1.setBounds(150, 325, 200, 30);
         frame.add(motto1);
         panel.add(motto1);
-                BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
+               /* BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
                 ArrayList<String> strings = new ArrayList<String>();
                 try {
                         String line = null;
@@ -79,8 +94,10 @@ public class HomePage {
                 finally {
                         input.close();
                 }
-
                 String[] lineArray = strings.toArray(new String[]{});
+
+                */
+
 
         JComboBox cb = new JComboBox(lineArray);
         cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
@@ -91,11 +108,8 @@ public class HomePage {
         frame.setVisible(true);
         panel.add(cb);
 
-        CurrenciesList list = new CurrenciesList();
 
-
-        String countryTo[] = {"India", "Aus", "U.S.A", "England", "Newzealand"};
-        JComboBox cb2 = new JComboBox(countryTo);
+        JComboBox cb2 = new JComboBox(lineArray);
         cb2.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
         cb2.setBounds(715, 325, 180, 20);
         frame.add(cb2);
@@ -105,7 +119,7 @@ public class HomePage {
         panel.add(cb2);
 
 
-   }
+      }
 
 
 }

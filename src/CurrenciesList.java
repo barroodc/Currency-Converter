@@ -7,7 +7,9 @@ import java.util.Scanner;
 
 public class CurrenciesList extends HomePage {
 
-   public void Currency() throws IOException {
+    public static String []theWayHome;
+
+   public static void Currency() throws IOException {
        BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
        ArrayList<String> strings = new ArrayList<String>();
        try {
@@ -24,7 +26,9 @@ public class CurrenciesList extends HomePage {
            input.close();
        }
 
-       String[] lineArray = strings.toArray(new String[]{});
+      theWayHome = strings.toArray(new String[]{});
+
 
    }
+
 }
