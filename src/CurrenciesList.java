@@ -1,25 +1,30 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Currency;
 import java.util.Scanner;
 
-public class CurrenciesList {
+public class CurrenciesList extends HomePage {
 
-   public static void Currency() throws FileNotFoundException {
-       File file = new File("/Users/christopher/Desktop/AlphaCurrencyList.txt");
-       Scanner sc = new Scanner(file);
-
-       ArrayList<String> alphaList = new ArrayList<>();
-
-       while (sc.hasNext()){
-           alphaList.add(sc.nextLine());
+   public void Currency() throws IOException {
+       BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
+       ArrayList<String> strings = new ArrayList<String>();
+       try {
+           String line = null;
+           while (( line = input.readLine()) != null){
+               strings.add(line);
+           }
        }
-       String[] finalAlphaList = alphaList.toArray(new String[alphaList.size()]);
 
+       catch (FileNotFoundException e) {
+           System.err.println("Error, file " + "/Users/christopher/Desktop/AlphaCurrencyList" + " didn't exist.");
+       }
+       finally {
+           input.close();
+       }
+
+       String[] lineArray = strings.toArray(new String[]{});
 
    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-       Currency();
-    }
 }

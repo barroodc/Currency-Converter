@@ -1,13 +1,13 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.ArrayList;
 
 public class HomePage {
 
 
-        public static void main(String[] args) throws FileNotFoundException {
+        public static void main(String[] args) throws IOException {
         JFrame frame = new JFrame("Currency Converter");
         JPanel panel = new JPanel();
         frame.getContentPane();
@@ -64,9 +64,25 @@ public class HomePage {
         motto1.setBounds(150, 325, 200, 30);
         frame.add(motto1);
         panel.add(motto1);
+                BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
+                ArrayList<String> strings = new ArrayList<String>();
+                try {
+                        String line = null;
+                        while (( line = input.readLine()) != null){
+                                strings.add(line);
+                        }
+                }
 
+                catch (FileNotFoundException e) {
+                        System.err.println("Error, file " + "/Users/christopher/Desktop/AlphaCurrencyList.txt" + " didn't exist.");
+                }
+                finally {
+                        input.close();
+                }
 
-        JComboBox cb = new JComboBox();
+                String[] lineArray = strings.toArray(new String[]{});
+
+        JComboBox cb = new JComboBox(lineArray);
         cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
         cb.setBounds(400, 325, 180, 20);
         frame.add(cb);
@@ -74,6 +90,8 @@ public class HomePage {
         frame.setSize(400, 500);
         frame.setVisible(true);
         panel.add(cb);
+
+        CurrenciesList list = new CurrenciesList();
 
 
         String countryTo[] = {"India", "Aus", "U.S.A", "England", "Newzealand"};
