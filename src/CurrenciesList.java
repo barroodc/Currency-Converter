@@ -1,13 +1,8 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Currency;
-import java.util.Scanner;
 
 public class CurrenciesList extends HomePage {
 
-    public static String []theWayHome;
 
    public static void Currency() throws IOException {
        BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
@@ -16,19 +11,21 @@ public class CurrenciesList extends HomePage {
            String line = null;
            while (( line = input.readLine()) != null){
                strings.add(line);
+               testList.add(strings);
            }
        }
 
        catch (FileNotFoundException e) {
-           System.err.println("Error, file " + "/Users/christopher/Desktop/AlphaCurrencyList" + " didn't exist.");
+           System.err.println("Error, file " + "/Users/christopher/Desktop/AlphaCurrencyList.txt" + " didn't exist.");
        }
        finally {
            input.close();
        }
-
-      theWayHome = strings.toArray(new String[]{});
+       String[] lineArray = strings.toArray(new String[]{});
+       //Can potentially put the Jcomboboxes over here.
 
 
    }
+
 
 }

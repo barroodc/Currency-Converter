@@ -2,25 +2,12 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
-import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 public class HomePage {
 
-        public static String[] list = CurrenciesList.theWayHome;
-        public static String[] lineArray = new String[176];
+        public static ArrayList<ArrayList<String>> testList = new ArrayList<>();
 
-
-
-
-
-        public static String[] getLineArray() {
-                return lineArray;
-        }
-
-        public static void setLineArray(String[] lineArray) {
-                HomePage.lineArray = lineArray;
-        }
 
         public static void main(String[] args) throws IOException {
         JFrame frame = new JFrame("Currency Converter");
@@ -99,7 +86,7 @@ public class HomePage {
                 */
 
 
-        JComboBox cb = new JComboBox(lineArray);
+        JComboBox cb = new JComboBox(CurrenciesList.testList.toArray());
         cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
         cb.setBounds(400, 325, 180, 20);
         frame.add(cb);
@@ -109,7 +96,7 @@ public class HomePage {
         panel.add(cb);
 
 
-        JComboBox cb2 = new JComboBox(lineArray);
+        JComboBox cb2 = new JComboBox(CurrenciesList.testList.toArray());
         cb2.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
         cb2.setBounds(715, 325, 180, 20);
         frame.add(cb2);
@@ -118,7 +105,7 @@ public class HomePage {
         frame.setVisible(true);
         panel.add(cb2);
 
-
+       System.out.println(testList);
       }
 
 
