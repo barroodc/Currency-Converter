@@ -25,6 +25,7 @@ public class CurrenciesList extends HomePage {
        }
        lineArray = strings.toArray(new String[]{});
        //Can potentially put the Jcomboboxes over here.
-       
+       //Possibly can restructure this class for just flag assignments for the currencies.
+        //Grouping currencies by flags would be super convenient in the future.
    }
 }
