@@ -5,12 +5,14 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import com.lowagie.text.rtf.parser.*;
 
 public class HomePage {
 
 
         public static void homePageSetup() throws IOException {
                 BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
+                //Need to figure out RTFD situation. Somehow I should add tools from library here.
                 ArrayList<String> strings = new ArrayList<String>();
                 try {
                         String line = null;
