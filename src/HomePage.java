@@ -25,7 +25,7 @@ public class HomePage {
                         input.close();
                 }
                 String[] lineArray = strings.toArray(new String[]{});
-
+                
                 JFrame frame = new JFrame("Currency Converter");
                 JPanel panel = new JPanel();
                 frame.getContentPane();
@@ -84,9 +84,8 @@ public class HomePage {
                 panel.add(motto1);
 
 
+
                 JComboBox cb = new JComboBox(lineArray);
-
-
                 cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
                 cb.setBounds(300, 325, 370, 20);
                 frame.add(cb);
@@ -94,6 +93,7 @@ public class HomePage {
                 frame.setSize(400, 500);
                 frame.setVisible(true);
                 panel.add(cb);
+
 
 
                 JComboBox cb2 = new JComboBox(lineArray);
