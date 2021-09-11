@@ -13,6 +13,9 @@ public class HomePage {
         public static void homePageSetup() throws IOException {
                 BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
                 //Need to figure out RTFD situation. Somehow I should add tools from library here.
+                RtfParser parser = new RtfParser();
+
+                
                 ArrayList<String> strings = new ArrayList<String>();
                 try {
                         String line = null;
@@ -98,7 +101,7 @@ public class HomePage {
 
 
 
-                JComboBox cb2 = new JComboBox(lineArray);
+                JComboBox cb2 = new JComboBox();
 
                 cb2.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
                 cb2.setBounds(825, 325, 370, 20);
