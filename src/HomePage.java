@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import com.lowagie.text.rtf.parser.*;
+
 
 public class HomePage {
 
@@ -13,7 +13,6 @@ public class HomePage {
         public static void homePageSetup() throws IOException {
                 BufferedReader input = new BufferedReader(new FileReader("/Users/christopher/Desktop/AlphaCurrencyList.txt"));
                 //Need to figure out RTFD situation. Somehow I should add tools from library here.
-                RtfParser parser = new RtfParser();
 
                 
                 ArrayList<String> strings = new ArrayList<String>();
@@ -30,7 +29,7 @@ public class HomePage {
                         input.close();
                 }
                 String[] lineArray = strings.toArray(new String[]{});
-                
+
                 JFrame frame = new JFrame("Currency Converter");
                 JPanel panel = new JPanel();
                 frame.getContentPane();
@@ -75,6 +74,7 @@ public class HomePage {
                 Font labelFont3 = to.getFont();
                 to.setFont(new Font(labelFont3.getName(), Font.PLAIN, 20));
 
+
                 frame.add(amount);
                 panel.add(amount);
                 frame.add(from);
@@ -101,7 +101,7 @@ public class HomePage {
 
 
 
-                JComboBox cb2 = new JComboBox();
+                JComboBox cb2 = new JComboBox(lineArray);
 
                 cb2.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
                 cb2.setBounds(825, 325, 370, 20);
