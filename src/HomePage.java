@@ -88,7 +88,7 @@ public class HomePage {
                 frame.add(motto1);
                 panel.add(motto1);
 
-
+                CurrenciesList currenciesList = new CurrenciesList();
 
                 JComboBox cb = new JComboBox(lineArray);
                 cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
@@ -98,7 +98,6 @@ public class HomePage {
                 frame.setSize(400, 500);
                 frame.setVisible(true);
                 panel.add(cb);
-
 
 
                 JComboBox cb2 = new JComboBox(lineArray);
@@ -112,7 +111,6 @@ public class HomePage {
                 panel.add(cb2);
 
         }
-
 
         public static void main(String[] args) throws IOException {
                homePageSetup();

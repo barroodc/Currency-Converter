@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CurrenciesList {
+public class CurrenciesList extends HomePage {
 
     ImageIcon[] flagImage = {
             new ImageIcon("Users/christopher/Desktop/Abkhazia.png"),
