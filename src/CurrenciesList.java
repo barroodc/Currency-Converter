@@ -12,6 +12,8 @@ public class CurrenciesList extends JFrame {
     private JComboBox box;
     private JLabel picture;
 
+    InputStream file = ClassLoader.class.getResourceAsStream("resources/chart.png");
+
     private static String[] filename = {"/Users/christopher/Desktop/Abkhazian.png"};
     private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0]))};
 
