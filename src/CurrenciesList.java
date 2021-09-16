@@ -1,18 +1,38 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CurrenciesList extends HomePage {
+public class CurrenciesList extends JFrame {
 
-    ImageIcon[] flagImage = {
-            new ImageIcon("Users/christopher/Desktop/Abkhazia.png"),
-            new ImageIcon("Users/christopher/Desktop/Abkhazia.png"),
-            new ImageIcon("Users/christopher/Desktop/Abkhazia.png"),
-            new ImageIcon("Users/christopher/Desktop/Abkhazia.png")
+    private JComboBox box;
+    private JLabel picture;
 
-    };
+    private static String[] filename = {"/Users/christopher/Desktop/Abkhazian.png"};
+    private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0]))};
+
+    public CurrenciesList(){
+        super("Currency Converter");
+        setLayout(new FlowLayout());
+
+        box = new JComboBox(filename);
+
+        box.addItemListener(
+                new ItemListener() {
+                    public void itemStateChanged(ItemEvent event){
+                        if (event.getStateChange() == ItemEvent.SELECTED)
+                            picture.setIcon(pics[box.getSelectedIndex()]);
+                    }
+                }
+        );
+
+        add(box);
+        picture = new JLabel(pics[0]);
+        add(picture);
+    }
 
 }
