@@ -88,7 +88,7 @@ public class HomePage {
                 frame.add(motto1);
                 panel.add(motto1);
 
-                CurrenciesList currenciesList = new CurrenciesList();
+
 
                 JComboBox cb = new JComboBox(lineArray);
                 cb.setFont(cb.getFont().deriveFont(Font.PLAIN, 20));
