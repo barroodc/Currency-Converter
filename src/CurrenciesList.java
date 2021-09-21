@@ -33,7 +33,6 @@ public class CurrenciesList {
 
         public CustomComboBoxDemo() throws IOException {
 
-            //Load the pet images and create an array of indexes.
             images = new ImageIcon[countries.length];
             Integer[] intArray = new Integer[countries.length];
             for (int i = 0; i < countries.length; i++) {
@@ -47,18 +46,26 @@ public class CurrenciesList {
 
             JComboBox countriesList = new JComboBox(intArray);
             countriesList.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
-            countriesList.setBounds(300, 325, 2000, 20);
+            countriesList.setBounds(300, 325, 2000, 100);
             ComboBoxRenderer renderer= new ComboBoxRenderer();
             renderer.setPreferredSize(new Dimension(200, 130));
             countriesList.setRenderer(renderer);
             countriesList.setMaximumRowCount(3);
 
-
             add(countriesList, BorderLayout.PAGE_START);
             setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 
-        }
+            JComboBox countriesList2 = new JComboBox(intArray);
+            countriesList2.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
+            countriesList2.setBounds(825, 325, 370, 20);
+            ComboBoxRenderer renderer2 = new ComboBoxRenderer();
+            renderer2.setPreferredSize(new Dimension(200,130));
+            countriesList2.setRenderer(renderer2);
+            countriesList.setMaximumRowCount(3);
 
+            add(countriesList2, BorderLayout.PAGE_START);
+            setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        }
         protected static ImageIcon createImageIcon(String path) {
             java.net.URL imgURL = CustomComboBoxDemo.class.getResource(path);
             if (imgURL != null) {
@@ -68,7 +75,6 @@ public class CurrenciesList {
                 return null;
             }
         }
-
         private static void createAndShowGUI() throws IOException {
 
             JFrame.setDefaultLookAndFeelDecorated(true);
@@ -83,18 +89,51 @@ public class CurrenciesList {
             lERates.setBounds(300, 180, size2.width, size2.height);
             Icon icon = new ImageIcon("/Users/christopher/Desktop/switch1.png");
             JButton theSwitch = new JButton(icon);
+            JButton convert = new JButton("Convert");
+            Dimension size3 = convert.getPreferredSize();
+            convert.setBounds(1000,500,size.width,size3.height);
+
+
+            JLabel amount = new JLabel("Amount");
+            amount.setBounds(50, 275, 200, 30);
+            Font labelFont = amount.getFont();
+            amount.setFont(new Font(labelFont.getName(), Font.PLAIN, 20));
+
+            JLabel from = new JLabel("From");
+            from.setBounds(300, 275, 200, 30);
+            Font labelFont2 = from.getFont();
+            from.setFont(new Font(labelFont2.getName(), Font.PLAIN, 20));
+
+            JLabel to = new JLabel("To");
+            to.setBounds(825, 275, 200, 30);
+            Font labelFont3 = to.getFont();
+            to.setFont(new Font(labelFont3.getName(), Font.PLAIN, 20));
+
+            JTextField motto1 = new JTextField();
+            motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
+            motto1.setBounds(50, 325, 200, 30);
+
+            JPanel panel = new JPanel();
 
 
             JComponent newContentPane = new CustomComboBoxDemo();
             newContentPane.setOpaque(true); //content panes must be opaque
+            frame.setSize(1200,600);
             frame.setContentPane(newContentPane);
             frame.add(hERates);
             frame.add(lERates);
             frame.add(theSwitch);
+            frame.add(convert);
+            frame.add(amount);
+            frame.add(from);
+            frame.add(to);
+            frame.add(motto1);
+
 
 
             frame.pack();
             frame.setVisible(true);
+
         }
 
         public static void main(String[] args) {
@@ -120,7 +159,6 @@ public class CurrenciesList {
                 setVerticalAlignment(CENTER);
             }
 
-
             public Component getListCellRendererComponent(
                     JList list,
                     Object value,
@@ -138,7 +176,6 @@ public class CurrenciesList {
                     setForeground(list.getForeground());
                 }
 
-
                 ImageIcon icon = images[selectedIndex];
                 String pet = countries[selectedIndex];
                 setIcon(icon);
@@ -152,7 +189,6 @@ public class CurrenciesList {
 
                 return this;
             }
-
 
             protected void setUhOhText(String uhOhText, Font normalFont) {
                 if (uhOhFont == null) {
