@@ -6,11 +6,11 @@ public class CurrenciesList {
 
 
 
-    public static class CustomComboBox extends JPanel {
+    public static class CustomComboBoxDemo extends JPanel {
         public static JComboBox countriesList;
         public static JComboBox countriesList2;
-        ImageIcon[] images;
-        String s = "AbkhazianApsar(ABK)\n" +
+        public static ImageIcon[] images;
+        public static String s = "AbkhazianApsar(ABK)\n" +
                 "AfghanistanAfghani(AFN)\n" +
                 "AlbanianLek(ALL)\n" +
                 "AlderneyPound(none)\n" +
@@ -30,11 +30,28 @@ public class CurrenciesList {
                 "BahamianDollar(BSD)\n" +
                 "BahrainiDinar(BHD)\n" +
                 "BangladeshiTaka(BDT)\n";
-        String[] countries = s.split("\\s");
+        public static  String[] countries = s.split("\\s");
 
 
 
-        public CustomComboBox() throws IOException {
+        public CustomComboBoxDemo() throws IOException {
+
+
+
+        }
+
+
+        protected static ImageIcon createImageIcon(String path) {
+            java.net.URL imgURL = CustomComboBoxDemo.class.getResource(path);
+            if (imgURL != null) {
+                return new ImageIcon(imgURL);
+            } else {
+                System.err.println("Couldn't find file: " + path);
+                return null;
+            }
+        }
+
+        public static void createAndShowGUI() throws IOException {
 
             //Load the pet images and create an array of indexes.
             images = new ImageIcon[countries.length];
@@ -47,43 +64,26 @@ public class CurrenciesList {
                 }
             }
 
+
             countriesList = new JComboBox(intArray);
             countriesList.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
-            countriesList.setBounds(300, 325, 2000, 100);
+            countriesList.setBounds(300, 325, 370, 20);
             ComboBoxRenderer renderer= new ComboBoxRenderer();
             renderer.setPreferredSize(new Dimension(200, 130));
             countriesList.setRenderer(renderer);
             countriesList.setMaximumRowCount(3);
 
-            add(countriesList, BorderLayout.PAGE_START);
-            //setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+
 
             countriesList2 = new JComboBox(intArray);
-            countriesList2.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
-            countriesList2.setBounds(300, 600, 2000, 100);
+            countriesList2.setFont(countriesList2.getFont().deriveFont(Font.PLAIN, 20));
+            countriesList2.setBounds(825,325,370,20);
             ComboBoxRenderer renderer2 = new ComboBoxRenderer();
             renderer2.setPreferredSize(new Dimension(200,130));
             countriesList2.setRenderer(renderer2);
-            countriesList.setMaximumRowCount(3);
+            countriesList2.setMaximumRowCount(3);
 
-            add(countriesList2, BorderLayout.PAGE_START);
-            //setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
-
-        }
-
-        protected static ImageIcon createImageIcon(String path) {
-            java.net.URL imgURL = CustomComboBox.class.getResource(path);
-            if (imgURL != null) {
-                return new ImageIcon(imgURL);
-            } else {
-                System.err.println("Couldn't find file: " + path);
-                return null;
-            }
-        }
-
-        private static void createAndShowGUI() throws IOException {
             JFrame.setDefaultLookAndFeelDecorated(true);
-
 
             JFrame frame = new JFrame("Currency Converter");
             JButton hERates = new JButton("Historical Exchange Rates");
@@ -126,6 +126,9 @@ public class CurrenciesList {
             frame.add(from);
             frame.add(to);
             frame.add(motto1);
+            frame.add(countriesList);
+            frame.add(countriesList2);
+
 
 
 
@@ -147,7 +150,7 @@ public class CurrenciesList {
             });
         }
 
-        class ComboBoxRenderer extends JLabel
+        static class ComboBoxRenderer extends JLabel
                 implements ListCellRenderer {
             private Font uhOhFont;
 
@@ -156,6 +159,8 @@ public class CurrenciesList {
                 setHorizontalAlignment(CENTER);
                 setVerticalAlignment(CENTER);
             }
+
+
 
 
             public Component getListCellRendererComponent(
@@ -174,6 +179,7 @@ public class CurrenciesList {
                     setBackground(list.getBackground());
                     setForeground(list.getForeground());
                 }
+
 
                 ImageIcon icon = images[selectedIndex];
                 String pet = countries[selectedIndex];
