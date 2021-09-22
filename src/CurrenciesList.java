@@ -6,7 +6,9 @@ public class CurrenciesList {
 
 
 
-    public static class CustomComboBoxDemo extends JPanel {
+    public static class CustomComboBox extends JPanel {
+        public static JComboBox countriesList;
+        public static JComboBox countriesList2;
         ImageIcon[] images;
         String s = "AbkhazianApsar(ABK)\n" +
                 "AfghanistanAfghani(AFN)\n" +
@@ -31,8 +33,10 @@ public class CurrenciesList {
         String[] countries = s.split("\\s");
 
 
-        public CustomComboBoxDemo() throws IOException {
 
+        public CustomComboBox() throws IOException {
+
+            //Load the pet images and create an array of indexes.
             images = new ImageIcon[countries.length];
             Integer[] intArray = new Integer[countries.length];
             for (int i = 0; i < countries.length; i++) {
@@ -43,8 +47,7 @@ public class CurrenciesList {
                 }
             }
 
-
-            JComboBox countriesList = new JComboBox(intArray);
+            countriesList = new JComboBox(intArray);
             countriesList.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
             countriesList.setBounds(300, 325, 2000, 100);
             ComboBoxRenderer renderer= new ComboBoxRenderer();
@@ -53,21 +56,23 @@ public class CurrenciesList {
             countriesList.setMaximumRowCount(3);
 
             add(countriesList, BorderLayout.PAGE_START);
-            setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+            //setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 
-            JComboBox countriesList2 = new JComboBox(intArray);
+            countriesList2 = new JComboBox(intArray);
             countriesList2.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
-            countriesList2.setBounds(825, 325, 370, 20);
+            countriesList2.setBounds(300, 600, 2000, 100);
             ComboBoxRenderer renderer2 = new ComboBoxRenderer();
             renderer2.setPreferredSize(new Dimension(200,130));
             countriesList2.setRenderer(renderer2);
             countriesList.setMaximumRowCount(3);
 
             add(countriesList2, BorderLayout.PAGE_START);
-            setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+            //setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+
         }
+
         protected static ImageIcon createImageIcon(String path) {
-            java.net.URL imgURL = CustomComboBoxDemo.class.getResource(path);
+            java.net.URL imgURL = CustomComboBox.class.getResource(path);
             if (imgURL != null) {
                 return new ImageIcon(imgURL);
             } else {
@@ -75,8 +80,8 @@ public class CurrenciesList {
                 return null;
             }
         }
-        private static void createAndShowGUI() throws IOException {
 
+        private static void createAndShowGUI() throws IOException {
             JFrame.setDefaultLookAndFeelDecorated(true);
 
 
@@ -113,13 +118,6 @@ public class CurrenciesList {
             motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
             motto1.setBounds(50, 325, 200, 30);
 
-            JPanel panel = new JPanel();
-
-
-            JComponent newContentPane = new CustomComboBoxDemo();
-            newContentPane.setOpaque(true); //content panes must be opaque
-            frame.setSize(1200,600);
-            frame.setContentPane(newContentPane);
             frame.add(hERates);
             frame.add(lERates);
             frame.add(theSwitch);
@@ -159,6 +157,7 @@ public class CurrenciesList {
                 setVerticalAlignment(CENTER);
             }
 
+
             public Component getListCellRendererComponent(
                     JList list,
                     Object value,
@@ -189,6 +188,7 @@ public class CurrenciesList {
 
                 return this;
             }
+
 
             protected void setUhOhText(String uhOhText, Font normalFont) {
                 if (uhOhFont == null) {
