@@ -255,11 +255,63 @@ public class CurrenciesList extends JPanel {
         Integer[] intArray = new Integer[countries.length];
         for (int i = 0; i < countries.length; i++) {
             intArray[i] = new Integer(i);
-            images[i] = createImageIcon("png/paraguay.png");
+            images[i] = createImageIcon("png/abkhazian.png");
+            images[1] = createImageIcon("png/afghanistan.png");
+            images[2] = createImageIcon("png/albania.png");
+            images[3] = createImageIcon("png/unitedkingdom.png");
+            images[4] = createImageIcon("png/algeria.png");
+            images[5] = createImageIcon("png/andorra.png");
+            images[6] = createImageIcon("png/andorra.png");
+            images[7] = createImageIcon("png/angola.png");
+            images[8] = createImageIcon("png/angola.png");
+            images[9] = createImageIcon("png/argentina.png");
+            images[10] = createImageIcon("png/armenia.png");
+            images[11] = createImageIcon("png/armenia.png");
+            images[12] = createImageIcon("png/aruba.png");
+            images[13] = createImageIcon("png/australia.png");
+            images[14] = createImageIcon("png/austria.png");
+            images[15] = createImageIcon("png/azerbaijan.png");
+            images[16] = createImageIcon("png/azerbaijan.png");
+            images[17] = createImageIcon("png/bahamas.png");
+            images[18] = createImageIcon("png/bahrain.png");
+            images[19] = createImageIcon("png/bangladesh.png");
+            images[20] = createImageIcon("png/barbados.png");
+            images[21] = createImageIcon("png/belarus.png");
+            images[22] = createImageIcon("png/belarus.png");
+            images[23] = createImageIcon("png/belarus.png");
+            images[24] = createImageIcon("png/belgium.png");
+            images[25] = createImageIcon("png/belize.png");
+            images[26] = createImageIcon("png/bermuda.png");
+            images[27] = createImageIcon("png/bhutan.png");
+            //#28 bitcoin should be here.
+            images[29] = createImageIcon("png/bolivia.png");
+            images[30] = createImageIcon("png/bosnia.png");
+            images[31] = createImageIcon("png/botswana.png");
+            images[32] = createImageIcon("png/brazil.png");
+            images[33] = createImageIcon("png/unitedkingdom.png");
+            images[34] = createImageIcon("png/brunei.png");
+            images[35] = createImageIcon("png/bulgaria.png");
+            images[36] = createImageIcon("png/bulgaria.png");
+            images[37] = createImageIcon("png/myanmar.png");
+            images[38] = createImageIcon("png/burundi.png");
+            images[39] = createImageIcon("png/cambodia.png");
+            images[40] = createImageIcon("png/canada.png");
+            images[41] = createImageIcon("png/capeverde.png");
+            images[42] = createImageIcon("png/caymanislands.png");
+            images[43] = createImageIcon("png/centafricanrep.png");
+            images[44] = createImageIcon("png/frenchpolynesia.png");
+            images[45] = createImageIcon("png/frenchpolynesia.png");
+            images[46] = createImageIcon("png/chile.png");
+            images[47] = createImageIcon("png/chile.png");
+            images[48] = createImageIcon("png/china.png");
+            images[49] = createImageIcon("png/china.png");
+            images[50] = createImageIcon("png/colombia.png");
+
             if (images[i] != null) {
                 images[i].setDescription(countries[i]);
             }
         }
+
 
         countriesList = new JComboBox(intArray);
         countriesList.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
@@ -268,6 +320,8 @@ public class CurrenciesList extends JPanel {
         renderer.setPreferredSize(new Dimension(200, 130));
         countriesList.setRenderer(renderer);
         countriesList.setMaximumRowCount(3);
+
+
 
         countriesList2 = new JComboBox(intArray);
         countriesList2.setFont(countriesList2.getFont().deriveFont(Font.PLAIN, 20));
@@ -315,6 +369,10 @@ public class CurrenciesList extends JPanel {
         motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
         motto1.setBounds(50, 325, 200, 30);
 
+        JTextField motto2 = new JTextField();
+        motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
+        motto1.setBounds(20,325,200,30);
+
         frame.setSize(1200,600);
 
         frame.add(hERates);
@@ -325,6 +383,7 @@ public class CurrenciesList extends JPanel {
         frame.add(from);
         frame.add(to);
         frame.add(motto1);
+        frame.add(motto2);
 
 
 
@@ -332,13 +391,14 @@ public class CurrenciesList extends JPanel {
 
 
 
-        //Display the window.
+
         frame.pack();
         frame.setVisible(true);
 
     }
 
     public static void main(String[] args) {
+
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -359,6 +419,8 @@ public class CurrenciesList extends JPanel {
             setHorizontalAlignment(CENTER);
             setVerticalAlignment(CENTER);
         }
+
+
 
 
         public Component getListCellRendererComponent(
