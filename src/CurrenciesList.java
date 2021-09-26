@@ -240,6 +240,8 @@ public class CurrenciesList extends JPanel {
 
     public static  String[] countries = s.split("\\s");
 
+
+    /** Returns an ImageIcon, or null if the path was invalid. */
     protected static ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = CurrenciesList.class.getResource(path);
         if (imgURL != null) {
@@ -249,6 +251,7 @@ public class CurrenciesList extends JPanel {
             return null;
         }
     }
+
 
     public static void createAndShowGUI() throws IOException {
 
@@ -319,6 +322,92 @@ public class CurrenciesList extends JPanel {
             images[60] = createImageIcon("png/djibouti.png");
             images[61] = createImageIcon("png/dominicanrep.png");
             images[62] = createImageIcon("png/netherlands .png");
+            images[63] = createImageIcon("still need to create");
+            images[64] = createImageIcon("png/ecuador.png");
+            images[65] = createImageIcon("png/egypt.png");
+            images[66] = createImageIcon("png/elsalvador.png");
+            images[67] = createImageIcon("png/eritrea.png");
+            images[68] = createImageIcon("png/estonia.png");
+            images[69] = createImageIcon("png/ethereum.png");
+            images[70] = createImageIcon("png/ethiopia.png");
+            images[71] = createImageIcon("png/europeanunion.png");
+            images[72] = createImageIcon("png/europeanunion.png");
+            images[73] = createImageIcon("png/falklandislands.png");
+            images[74] = createImageIcon("png/faroeislands.png");
+            images[75] = createImageIcon("png/fiji.png");
+            images[76] = createImageIcon("png/finland.png");
+            images[77] = createImageIcon("png/france.png");
+            images[78] = createImageIcon("png/gambia.png");
+            images[79] = createImageIcon("png/georgia.png");
+            images[80] = createImageIcon("png/germany.png");
+            images[81] = createImageIcon("png/ghana.png");
+            images[82] = createImageIcon("png/ghana.png");
+            images[83] = createImageIcon("png/gibraltar.png");
+            images[84] = createImageIcon("png/gold.png");
+            images[85] = createImageIcon("png/greece.png");
+            images[86] = createImageIcon("png/guatemala.png");
+            images[87] = createImageIcon("png/guernsey.png");
+            images[88] = createImageIcon("png/guinea.png");
+            images[89] = createImageIcon("png/guyana.png");
+            images[90] = createImageIcon("png/haiti.png");
+            images[91] = createImageIcon("png/honduras.png");
+            images[92] = createImageIcon("png/hongkong.png");
+            images[93] = createImageIcon("png/hungary.png");
+            images[94] = createImageIcon("png/iceland.png");
+            images[95] = createImageIcon("png/india.png");
+            images[96] = createImageIcon("png/indonesia.png");
+            images[97] = createImageIcon("png/iran.png");
+            images[98] = createImageIcon("png/iraq.png");
+            images[99] = createImageIcon("png/ireland.png");
+            images[100] = createImageIcon("png/israel.png");
+            images[101] = createImageIcon("png/italy.png");
+            images[102] = createImageIcon("png/jamaica.png");
+            images[103] = createImageIcon("png/japan.png");
+            images[104] = createImageIcon("png/jersey.png");
+            images[105] = createImageIcon("png/jordan.png");
+            images[106] = createImageIcon("png/kazakhstan.png");
+            images[107] = createImageIcon("png/kenya.png");
+            images[108] = createImageIcon("png/kiribati.png");
+            images[109] = createImageIcon("png/kuwait.png");
+            images[110] = createImageIcon("png/kyrgyzstan.png");
+            images[111] = createImageIcon("png/laos.png");
+            images[112] = createImageIcon("png/lebanon.png");
+            images[113] = createImageIcon("png/lesotho.png");
+            images[114] = createImageIcon("png/liberia.png");
+            images[115] = createImageIcon("png/libya.png");
+            images[116] = createImageIcon("png/litecoin.png");
+            images[117] = createImageIcon("png/lithuania.png");
+            images[118] = createImageIcon("png/luxembourg.png");
+            images[119] = createImageIcon("png/macao.png");
+            images[120] = createImageIcon("png/republicofmacedonia.png");
+            images[121] = createImageIcon("png/madagascar.png");
+            images[122] = createImageIcon("png/madagascar.png");
+            images[123] = createImageIcon("png/malawi.png");
+            images[124] = createImageIcon("png/malaysia.png");
+            images[125] = createImageIcon("png/maldives.png");
+            images[126] = createImageIcon("png/malta.png");
+            images[127] = createImageIcon("png/isleofman.png");
+            images[128] = createImageIcon("png/mauritania.png");
+            images[129] = createImageIcon("png/mauritania.png");
+            images[130] = createImageIcon("png/mauritius.png");
+            images[131] = createImageIcon("png/mexico.png");
+            images[132] = createImageIcon("png/moldova.png");
+            images[133] = createImageIcon("png/mongolia.png");
+            images[134] = createImageIcon("png/morocco.png");
+            images[135] = createImageIcon("png/mozambique.png");
+            images[136] = createImageIcon("png/mozambique.png");
+            images[137] = createImageIcon("png/myanmar.png");
+            images[138] = createImageIcon("png/namibia.png");
+            images[139] = createImageIcon("png/nepal.png");
+            images[140] = createImageIcon("png/netherlands .png");
+            images[141] = createImageIcon("png/taiwan.png");
+            images[142] = createImageIcon("png/newzealand.png");
+            images[143] = createImageIcon("png/nicaragua.png");
+            images[144] = createImageIcon("png/nigeria.png");
+            images[145] = createImageIcon("png/niue.png");
+            images[146] = createImageIcon("png/northkorea.png");
+            images[147] = createImageIcon("png/norway.png");
+            images[148] = createImageIcon("png/oman.png");
 
             if (images[i] != null) {
                 images[i].setDescription(countries[i]);
@@ -336,7 +425,6 @@ public class CurrenciesList extends JPanel {
         countriesList.setMaximumRowCount(3);
 
 
-
         countriesList2 = new JComboBox(intArray);
         countriesList2.setFont(countriesList2.getFont().deriveFont(Font.PLAIN, 20));
         countriesList2.setBounds(825,325,370,20);
@@ -346,6 +434,7 @@ public class CurrenciesList extends JPanel {
         countriesList2.setMaximumRowCount(3);
 
         JFrame.setDefaultLookAndFeelDecorated(true);
+
 
 
         JFrame frame = new JFrame("Currency Converter");
@@ -387,11 +476,9 @@ public class CurrenciesList extends JPanel {
         motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
         motto1.setBounds(20,325,200,30);
 
-        //Create and set up the content pane.
-        //JComponent newContentPane = new CustomComboBoxDemo();
-        //newContentPane.setOpaque(true); //content panes must be opaque
+
         frame.setSize(1200,600);
-        //frame.setContentPane(newContentPane);
+
         frame.add(hERates);
         frame.add(lERates);
         frame.add(theSwitch);
@@ -401,6 +488,9 @@ public class CurrenciesList extends JPanel {
         frame.add(to);
         frame.add(motto1);
         frame.add(motto2);
+
+
+
 
         frame.pack();
         frame.setVisible(true);
@@ -447,6 +537,7 @@ public class CurrenciesList extends JPanel {
                 setForeground(list.getForeground());
             }
 
+
             ImageIcon icon = images[selectedIndex];
             String country = countries[selectedIndex];
             setIcon(icon);
@@ -460,6 +551,7 @@ public class CurrenciesList extends JPanel {
 
             return this;
         }
+
 
         protected void setUhOhText(String uhOhText, Font normalFont) {
             if (uhOhFont == null) {
