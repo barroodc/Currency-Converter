@@ -51,7 +51,7 @@ public class CurrenciesList extends JPanel {
                     "CanadianDollar(CAD)\n" +
                     "CapeVerdeanEscudo(CVE)\n" +
                     "CaymanIslandsDollar(KYD)\n" +
-                    "CentralAfricanCFAfranc(XAF)\n" +
+                    "CentralAfricanCFAfranc(BEAC/XAF)\n" +
                     "CentralPacificFranc(CFP)\n" +
                     "CFPFranc(XPF)\n" +
                     "ChileanPeso(CLP)\n" +
@@ -240,8 +240,6 @@ public class CurrenciesList extends JPanel {
 
     public static  String[] countries = s.split("\\s");
 
-
-
     protected static ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = CurrenciesList.class.getResource(path);
         if (imgURL != null) {
@@ -253,7 +251,6 @@ public class CurrenciesList extends JPanel {
     }
 
     public static void createAndShowGUI() throws IOException {
-
 
         images = new ImageIcon[countries.length];
         Integer[] intArray = new Integer[countries.length];
@@ -301,13 +298,27 @@ public class CurrenciesList extends JPanel {
             images[39] = createImageIcon("png/canada.png");
             images[40] = createImageIcon("png/capeverde.png");
             images[41] = createImageIcon("png/caymanislands.png");
-            images[42] = createImageIcon("png/frenchpolynesia.png");
+            images[42] = createImageIcon("not yet created");
             images[43] = createImageIcon("png/frenchpolynesia.png");
-            images[44] = createImageIcon("png/chile.png");
+            images[44] = createImageIcon("not yet created");
             images[45] = createImageIcon("png/chile.png");
-            images[46] = createImageIcon("png/china.png");
+            images[46] = createImageIcon("png/chile.png");
             images[47] = createImageIcon("png/china.png");
-            images[48] = createImageIcon("png/colombia.png");
+            images[48] = createImageIcon("png/china.png");
+            images[49] = createImageIcon("png/colombia.png");
+            images[50] = createImageIcon("png/comoros.png");
+            images[51] = createImageIcon("png/demrepofcongo.png");
+            images[52] = createImageIcon("png/cookislands.png");
+            images[53] = createImageIcon("png/costarica.png");
+            images[54] = createImageIcon("png/croatia.png");
+            images[55] = createImageIcon("png/cuba.png");
+            images[56] = createImageIcon("png/cuba.png");
+            images[57] = createImageIcon("png/cyprus.png");
+            images[58] = createImageIcon("png/czechrepublic.png");
+            images[59] = createImageIcon("png/denmark.png");
+            images[60] = createImageIcon("png/djibouti.png");
+            images[61] = createImageIcon("png/dominicanrep.png");
+            images[62] = createImageIcon("png/netherlands .png");
 
             if (images[i] != null) {
                 images[i].setDescription(countries[i]);
@@ -316,7 +327,6 @@ public class CurrenciesList extends JPanel {
 
 
 
-        //Create the combo box.
         countriesList = new JComboBox(intArray);
         countriesList.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
         countriesList.setBounds(300, 325, 370, 20);
@@ -324,6 +334,7 @@ public class CurrenciesList extends JPanel {
         renderer.setPreferredSize(new Dimension(200, 130));
         countriesList.setRenderer(renderer);
         countriesList.setMaximumRowCount(3);
+
 
 
         countriesList2 = new JComboBox(intArray);
@@ -334,9 +345,7 @@ public class CurrenciesList extends JPanel {
         countriesList2.setRenderer(renderer2);
         countriesList2.setMaximumRowCount(3);
 
-
         JFrame.setDefaultLookAndFeelDecorated(true);
-
 
 
         JFrame frame = new JFrame("Currency Converter");
@@ -378,9 +387,11 @@ public class CurrenciesList extends JPanel {
         motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
         motto1.setBounds(20,325,200,30);
 
-
+        //Create and set up the content pane.
+        //JComponent newContentPane = new CustomComboBoxDemo();
+        //newContentPane.setOpaque(true); //content panes must be opaque
         frame.setSize(1200,600);
-
+        //frame.setContentPane(newContentPane);
         frame.add(hERates);
         frame.add(lERates);
         frame.add(theSwitch);
@@ -390,13 +401,6 @@ public class CurrenciesList extends JPanel {
         frame.add(to);
         frame.add(motto1);
         frame.add(motto2);
-
-
-
-
-
-
-
 
         frame.pack();
         frame.setVisible(true);
@@ -426,8 +430,6 @@ public class CurrenciesList extends JPanel {
             setVerticalAlignment(CENTER);
         }
 
-
-
         public Component getListCellRendererComponent(
                 JList list,
                 Object value,
@@ -445,7 +447,6 @@ public class CurrenciesList extends JPanel {
                 setForeground(list.getForeground());
             }
 
-
             ImageIcon icon = images[selectedIndex];
             String country = countries[selectedIndex];
             setIcon(icon);
@@ -460,9 +461,8 @@ public class CurrenciesList extends JPanel {
             return this;
         }
 
-        //Set the font and text when no image was found.
         protected void setUhOhText(String uhOhText, Font normalFont) {
-            if (uhOhFont == null) { //lazily create this font
+            if (uhOhFont == null) {
                 uhOhFont = normalFont.deriveFont(Font.ITALIC);
             }
             setFont(uhOhFont);
