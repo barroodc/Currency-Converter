@@ -488,6 +488,7 @@ public class CurrenciesList extends JPanel {
 
 
 
+
             if (images[i] != null) {
                 images[i].setDescription(countries[i]);
             }
