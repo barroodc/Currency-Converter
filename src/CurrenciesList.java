@@ -300,7 +300,7 @@ public class CurrenciesList extends JPanel {
             images[41] = createImageIcon("png/caymanislands.png");
             images[42] = createImageIcon("png/centralafrica.png");
             images[43] = createImageIcon("png/frenchpolynesia.png");
-            images[44] = createImageIcon("not yet created");
+            images[44] = createImageIcon("png/XPF.png");
             images[45] = createImageIcon("png/chile.png");
             images[46] = createImageIcon("png/chile.png");
             images[47] = createImageIcon("png/china.png");
@@ -319,7 +319,7 @@ public class CurrenciesList extends JPanel {
             images[60] = createImageIcon("png/djibouti.png");
             images[61] = createImageIcon("png/dominicanrep.png");
             images[62] = createImageIcon("png/netherlands .png");
-            images[63] = createImageIcon("still need to create");
+            images[63] = createImageIcon("png/XCD.png");
             images[64] = createImageIcon("png/ecuador.png");
             images[65] = createImageIcon("png/egypt.png");
             images[66] = createImageIcon("png/elsalvador.png");
@@ -406,14 +406,14 @@ public class CurrenciesList extends JPanel {
             images[147] = createImageIcon("png/norway.png");
             images[148] = createImageIcon("png/oman.png");
             images[149] = createImageIcon("png/pakistan.png");
-            images[150] = createImageIcon("need to find");
+            images[150] = createImageIcon("png/palladium.png");
             images[151] = createImageIcon("png/panama.png");
             images[152] = createImageIcon("png/papuanewguinea.png");
             images[153] = createImageIcon("png/paraguay.png");
             images[154] = createImageIcon("png/peru.png");
             images[155] = createImageIcon("png/philippines.png");
             images[156] = createImageIcon("png/pitcairnislands.png");
-            images[157] = createImageIcon("need to find");
+            images[157] = createImageIcon("png/platinum.png");
             images[158] = createImageIcon("png/poland.png");
             images[159] = createImageIcon("png/poland.png");
             images[160] = createImageIcon("png/portugal.png");
@@ -424,7 +424,7 @@ public class CurrenciesList extends JPanel {
             images[165] = createImageIcon("png/russia.png");
             images[166] = createImageIcon("png/rwanda.png");
             images[167] = createImageIcon("png/sahrawiarabdemrep.png");
-            images[168] = createImageIcon("need to find");
+            images[168] = createImageIcon("png/sainthelena.png");
             images[169] = createImageIcon("png/samoa.png");
             images[170] = createImageIcon("png/saotomeandprince.png");
             images[171] = createImageIcon("png/saotomeandprince.png");
@@ -479,12 +479,11 @@ public class CurrenciesList extends JPanel {
             images[220] = createImageIcon("png/venezuela.png");
             images[221] = createImageIcon("png/venezuela.png");
             images[222] = createImageIcon("png/vietnam.png");
-            images[223] = createImageIcon("need to find");
+            images[223] = createImageIcon("png/westafrica.png");
             images[224] = createImageIcon("png/yemen.png");
-            images[225] = createImageIcon("need to find it");
+            images[225] = createImageIcon("png/yugoslavia.png");
             images[226] = createImageIcon("png/zambia.png");
             images[227] = createImageIcon("png/zimbabwe.png");
-
 
 
 
@@ -493,6 +492,7 @@ public class CurrenciesList extends JPanel {
                 images[i].setDescription(countries[i]);
             }
         }
+
 
         countriesList = new JComboBox(intArray);
         countriesList.setFont(countriesList.getFont().deriveFont(Font.PLAIN, 20));
@@ -567,6 +567,11 @@ public class CurrenciesList extends JPanel {
 
 
 
+
+
+
+
+
         frame.pack();
         frame.setVisible(true);
 
@@ -595,6 +600,9 @@ public class CurrenciesList extends JPanel {
             setVerticalAlignment(CENTER);
         }
 
+
+
+
         public Component getListCellRendererComponent(
                 JList list,
                 Object value,
@@ -612,6 +620,7 @@ public class CurrenciesList extends JPanel {
                 setForeground(list.getForeground());
             }
 
+
             ImageIcon icon = images[selectedIndex];
             String country = countries[selectedIndex];
             setIcon(icon);
@@ -625,6 +634,7 @@ public class CurrenciesList extends JPanel {
 
             return this;
         }
+
 
         protected void setUhOhText(String uhOhText, Font normalFont) {
             if (uhOhFont == null) {
