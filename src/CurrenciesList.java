@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-
+import java.util.*;
 
 
 public class CurrenciesList extends JPanel {
@@ -545,13 +545,25 @@ public class CurrenciesList extends JPanel {
         Font labelFont3 = to.getFont();
         to.setFont(new Font(labelFont3.getName(), Font.PLAIN, 20));
 
-        JTextField motto1 = new JTextField();
-        motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
-        motto1.setBounds(50, 325, 200, 30);
+        JTextField currencyType = new JTextField();
+        currencyType.setFont(currencyType.getFont().deriveFont(Font.PLAIN, 20));
+        currencyType.setBounds(50, 325, 200, 30);
+        currencyType.setVisible(true);
 
-        JTextField motto2 = new JTextField();
-        motto1.setFont(motto1.getFont().deriveFont(Font.PLAIN, 20));
-        motto1.setBounds(20,325,200,30);
+        // Create a currency for USD
+        Currency cur = Currency.getInstance("USD");
+        // Get and print the symbol of the currency
+        String symbol = cur.getSymbol();
+
+        currencyType.setText(symbol);
+
+
+
+
+        JTextField entryField = new JTextField();
+
+
+
 
         frame.setSize(1200,600);
 
@@ -562,18 +574,14 @@ public class CurrenciesList extends JPanel {
         frame.add(amount);
         frame.add(from);
         frame.add(to);
-        frame.add(motto1);
-        frame.add(motto2);
-
-
-
-
-
-
+        frame.add(currencyType);
+        frame.add(entryField);
 
 
         frame.pack();
         frame.setVisible(true);
+
+
 
     }
 
@@ -645,4 +653,5 @@ public class CurrenciesList extends JPanel {
         }
     }
 }
+
 
