@@ -1,10 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.IOException;
 import java.util.*;
 
 
-public class CurrenciesList extends JPanel {
+public class CurrencyConverter extends JPanel {
     public static JComboBox countriesList;
     public static JComboBox countriesList2;
     public static ImageIcon[] images;
@@ -241,7 +245,7 @@ public class CurrenciesList extends JPanel {
     public static  String[] countries = s.split("\\s");
 
     protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = CurrenciesList.class.getResource(path);
+        java.net.URL imgURL = CurrencyConverter.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
@@ -555,7 +559,11 @@ public class CurrenciesList extends JPanel {
         // Get and print the symbol of the currency
         String symbol = cur.getSymbol();
 
-        currencyType.setText(symbol);
+        if (countriesList.getSelectedIndex() == 214){
+            currencyType.setText(symbol);
+        }
+
+
 
 
 
@@ -584,6 +592,8 @@ public class CurrenciesList extends JPanel {
 
 
     }
+
+
 
     public static void main(String[] args) {
 
