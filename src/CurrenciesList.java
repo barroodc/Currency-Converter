@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class CurrencyConverter extends JPanel {
+public class CurrenciesList extends JPanel {
     public static JComboBox countriesList;
     public static JComboBox countriesList2;
     public static ImageIcon[] images;
@@ -245,7 +245,7 @@ public class CurrencyConverter extends JPanel {
     public static  String[] countries = s.split("\\s");
 
     protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = CurrencyConverter.class.getResource(path);
+        java.net.URL imgURL = CurrenciesList.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
