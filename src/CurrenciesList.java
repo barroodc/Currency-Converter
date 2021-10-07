@@ -559,18 +559,19 @@ public class CurrenciesList extends JPanel {
         // Get and print the symbol of the currency
         String symbol = cur.getSymbol();
 
-        if (countriesList.getSelectedIndex() == 214){
+        //for (int i = 0; i < countries.length; i++){
+        //countries[214];
+        //}
+
+        if (countries[214].equals("UnitedStatesDollar(USD)")){
             currencyType.setText(symbol);
         }
 
 
-
-
+        //currencyType.setText(symbol);
 
 
         JTextField entryField = new JTextField();
-
-
 
 
         frame.setSize(1200,600);
