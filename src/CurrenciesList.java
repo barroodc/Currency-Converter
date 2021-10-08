@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class CurrenciesList extends JPanel {
+public class CurrencyConverter extends JPanel {
     public static JComboBox countriesList;
     public static JComboBox countriesList2;
     public static ImageIcon[] images;
@@ -242,7 +242,7 @@ public class CurrenciesList extends JPanel {
     public static  String[] countries = s.split("\\s");
 
     protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = CurrenciesList.class.getResource(path);
+        java.net.URL imgURL = CurrencyConverter.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
@@ -551,24 +551,164 @@ public class CurrenciesList extends JPanel {
         currencyType.setBounds(50, 325, 200, 30);
         currencyType.setVisible(true);
 
-        // Create a currency for USD
-        Currency cur = Currency.getInstance("USD");
-        // Get and print the symbol of the currency
-        String symbol = cur.getSymbol();
-        //intarray is what should be used to figure this all out.
-        //Need to try using item listener or action listener
 
-        countriesList.addItemListener(new ItemListener() {
+        /*countriesList.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if(e.getStateChange() == ItemEvent.SELECTED) {
                     Object item = e.getItem();
                     if (item.equals(intArray[214])){
                         currencyType.setText(symbol);
+                    } else if (item.equals(intArray[1])){
+                        currencyType.setText("&");
                     }
                 }
             }
         });
+
+         */
+
+        // Create a currency for USD
+        Currency cur = Currency.getInstance("USD");
+        // Get and print the symbol of the currency
+        String symbol = cur.getSymbol();
+
+        //Default will be ABK. I will set that up after entering in all of the currencies.
+        //No item event need occur for the default.
+
+        countriesList.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(e.getStateChange() == ItemEvent.SELECTED) {
+                    Object item = e.getItem();
+                    if (item.equals(intArray[0])){
+                        currencyType.setText("аԥсар");
+                    } else if (item.equals(intArray[1])){
+                        currencyType.setText("؋");
+                    } else if (item.equals(intArray[2])){
+                        currencyType.setText("L");
+                    } else if (item.equals(intArray[3])){
+                        currencyType.setText("£");
+                    } else if (item.equals(intArray[4])){
+                        currencyType.setText("دج");
+                    } else if (item.equals(intArray[5])){
+                        currencyType.setText("ADF");
+                    } else if (item.equals(intArray[6])){
+                        currencyType.setText("Pt");
+                    } else if (item.equals(intArray[7])){
+                        currencyType.setText("Kz");
+                    } else if (item.equals(intArray[8])){
+                        currencyType.setText("Kz");
+                    } else if (item.equals(intArray[9])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[10])){
+                        currencyType.setText("֏");
+                    } else if (item.equals(intArray[11])){
+                        currencyType.setText("Դր.");
+                    } else if (item.equals(intArray[12])){
+                        currencyType.setText("ƒ");
+                    } else if (item.equals(intArray[13])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[14])){
+                        currencyType.setText("S");
+                    } else if (item.equals(intArray[15])){
+                        currencyType.setText("₼");
+                    } else if (item.equals(intArray[16])){
+                        currencyType.setText("₼");
+                    } else if (item.equals(intArray[17])){
+                        currencyType.setText("B$");
+                    } else if (item.equals(intArray[18])){
+                        currencyType.setText(".د.ب");
+                    } else if (item.equals(intArray[19])){
+                        currencyType.setText("৳");
+                    } else if (item.equals(intArray[20])){
+                        currencyType.setText("Bds$");
+                    } else if (item.equals(intArray[21])){
+                        currencyType.setText("Br");
+                    } else if (item.equals(intArray[22])){
+                        currencyType.setText("Br");
+                    } else if (item.equals(intArray[23])){
+                        currencyType.setText("F");
+                    } else if (item.equals(intArray[24])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[25])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[26])){
+                        currencyType.setText("Nu.");
+                    } else if (item.equals(intArray[27])){
+                        currencyType.setText("₿");
+                    } else if (item.equals(intArray[28])){
+                        currencyType.setText("Bs");
+                    } else if (item.equals(intArray[29])){
+                        currencyType.setText("KM");
+                    } else if (item.equals(intArray[30])){
+                        currencyType.setText("P");
+                    } else if (item.equals(intArray[31])){
+                        currencyType.setText("R$");
+                    } else if (item.equals(intArray[32])){
+                        currencyType.setText("£");
+                    } else if (item.equals(intArray[33])){
+                        currencyType.setText("B$");
+                    } else if (item.equals(intArray[34])){
+                        currencyType.setText("Лв.");
+                    } else if (item.equals(intArray[35])){
+                        currencyType.setText("Лв.");
+                    } else if (item.equals(intArray[36])){
+                        currencyType.setText("K");
+                    } else if (item.equals(intArray[37])){
+                        currencyType.setText("FBu");
+                    } else if (item.equals(intArray[38])){
+                        currencyType.setText("៛");
+                    } else if (item.equals(intArray[39])){
+                        currencyType.setText("C$");
+                    } else if (item.equals(intArray[40])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[41])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[42])){
+                        currencyType.setText("FCFA");
+                    } else if (item.equals(intArray[43])){
+                        currencyType.setText("F");
+                    } else if (item.equals(intArray[44])){
+                        currencyType.setText("₣");
+                    } else if (item.equals(intArray[45])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[46])){
+                        currencyType.setText("CLF");
+                    } else if (item.equals(intArray[47])){
+                        currencyType.setText("¥");
+                    } else if (item.equals(intArray[48])){
+                        currencyType.setText("¥");
+                    } else if (item.equals(intArray[49])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[50])){
+                        currencyType.setText("CF");
+                    } else if (item.equals(intArray[51])){
+                        currencyType.setText("FC");
+                    } else if (item.equals(intArray[52])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[53])){
+                        currencyType.setText("₡");
+                    } else if (item.equals(intArray[54])){
+                        currencyType.setText("kn");
+                    } else if (item.equals(intArray[55])){
+                        currencyType.setText("CUC$");
+                    } else if (item.equals(intArray[56])){
+                        currencyType.setText("$MN");
+                    } else if (item.equals(intArray[57])){
+                        currencyType.setText("£");
+                    } else if (item.equals(intArray[58])){
+                        currencyType.setText("Kč");
+                    } else if (item.equals(intArray[59])){
+                        currencyType.setText("Kr.");
+                    } else if (item.equals(intArray[60])){
+                        currencyType.setText("Fdj");
+                    }
+                }
+            }
+        });
+
+
 
 
 
