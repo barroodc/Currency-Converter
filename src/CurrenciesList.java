@@ -171,7 +171,7 @@ public class CurrenciesList extends JPanel {
                     "PolishOldZloty(PLZ)\n" +
                     "PolishZloty(PLN)\n" +
                     "PortugueseEscudo(PTE)\n" +
-                    "QatariRial(QAR)\n" +
+                    "QatariRiyal(QAR)\n" +
                     "RomanianLeu(ROL)\n" +
                     "RomanianNewLeu(RON)\n" +
                     "RTGSDollar(ZWB)\n" +
@@ -811,6 +811,132 @@ public class CurrenciesList extends JPanel {
                         currencyType.setText("L");
                     } else if (item.equals(intArray[114])){
                         currencyType.setText("L$");
+                    } else if (item.equals(intArray[115])){
+                        currencyType.setText("LD");
+                    } else if (item.equals(intArray[116])){
+                        currencyType.setText("Ł");
+                    } else if (item.equals(intArray[117])){
+                        currencyType.setText("Lt");
+                    } else if (item.equals(intArray[118])){
+                        currencyType.setText("F");
+                    } else if (item.equals(intArray[119])){
+                        currencyType.setText("MOP$");
+                    } else if (item.equals(intArray[120])){
+                        currencyType.setText("Ден");
+                    } else if (item.equals(intArray[121])){
+                        currencyType.setText("Ar");
+                    } else if (item.equals(intArray[122])){
+                        currencyType.setText("MF");
+                    } else if (item.equals(intArray[123])){
+                        currencyType.setText("MK");
+                    } else if (item.equals(intArray[124])){
+                        currencyType.setText("RM");
+                    } else if (item.equals(intArray[125])){
+                        currencyType.setText("Rf");
+                    } else if (item.equals(intArray[126])){
+                        currencyType.setText("Lm");
+                    } else if (item.equals(intArray[127])){
+                        currencyType.setText("£");
+                    } else if (item.equals(intArray[128])){
+                        currencyType.setText("UM");
+                    } else if (item.equals(intArray[129])){
+                        currencyType.setText("UM");
+                    } else if (item.equals(intArray[130])){
+                        currencyType.setText("₨");
+                    } else if (item.equals(intArray[131])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[132])){
+                        currencyType.setText("L");
+                    } else if (item.equals(intArray[133])){
+                        currencyType.setText("₮");
+                    } else if (item.equals(intArray[134])){
+                        currencyType.setText("DH");
+                    } else if (item.equals(intArray[135])){
+                        currencyType.setText("MT");
+                    } else if (item.equals(intArray[136])){
+                        currencyType.setText("MTn");
+                    } else if (item.equals(intArray[137])){
+                        currencyType.setText("K");
+                    } else if (item.equals(intArray[138])){
+                        currencyType.setText("N$");
+                    } else if (item.equals(intArray[139])){
+                        currencyType.setText("रु");
+                    } else if (item.equals(intArray[140])){
+                        currencyType.setText("NAƒ");
+                    } else if (item.equals(intArray[141])){
+                        currencyType.setText("NT$");
+                    } else if (item.equals(intArray[142])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[143])){
+                        currencyType.setText("C$");
+                    } else if (item.equals(intArray[144])){
+                        currencyType.setText("₦");
+                    } else if (item.equals(intArray[145])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[146])){
+                        currencyType.setText("₩");
+                    } else if (item.equals(intArray[147])){
+                        currencyType.setText("kr");
+                    } else if (item.equals(intArray[148])){
+                        currencyType.setText("ر.ع.");
+                    } else if (item.equals(intArray[149])){
+                        currencyType.setText("₨");
+                    } else if (item.equals(intArray[150])){
+                        currencyType.setText("XPD");
+                    } else if (item.equals(intArray[151])){
+                        currencyType.setText("B/.");
+                    } else if (item.equals(intArray[152])){
+                        currencyType.setText("K");
+                    } else if (item.equals(intArray[153])){
+                        currencyType.setText("₲");
+                    } else if (item.equals(intArray[154])){
+                        currencyType.setText("S/");
+                    } else if (item.equals(intArray[155])){
+                        currencyType.setText("₱");
+                    } else if (item.equals(intArray[156])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[157])){
+                        currencyType.setText("XPT");
+                    } else if (item.equals(intArray[158])){
+                        currencyType.setText("zł");
+                    } else if (item.equals(intArray[159])){
+                        currencyType.setText("zł");
+                    } else if (item.equals(intArray[160])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[161])){
+                        currencyType.setText(" ر.ق");
+                    } else if (item.equals(intArray[162])){
+                        currencyType.setText("L");
+                    } else if (item.equals(intArray[163])){
+                        currencyType.setText("L");
+                    } else if (item.equals(intArray[164])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[165])){
+                        currencyType.setText("₽");
+                    } else if (item.equals(intArray[166])){
+                        currencyType.setText("FRw");
+                    } else if (item.equals(intArray[167])){
+                        currencyType.setText("₧");
+                    } else if (item.equals(intArray[168])){
+                        currencyType.setText("£");
+                    } else if (item.equals(intArray[169])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[170])){
+                        currencyType.setText("Db");
+                    } else if (item.equals(intArray[171])){
+                        currencyType.setText("Db");
+                    } else if (item.equals(intArray[172])){
+                        currencyType.setText("ر.س, ﷼");
+                    } else if (item.equals(intArray[173])){
+                        currencyType.setText("din");
+                    } else if (item.equals(intArray[174])){
+                        currencyType.setText("din");
+                    } else if (item.equals(intArray[175])){
+                        currencyType.setText("SR");
+                    } else if (item.equals(intArray[176])){
+                        currencyType.setText("Le");
+                    } else if (item.equals(intArray[177])){
+                        currencyType.setText("XAG");
                     }
                 }
             }
