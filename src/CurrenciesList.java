@@ -552,30 +552,6 @@ public class CurrenciesList extends JPanel {
         currencyType.setVisible(true);
 
 
-        /*countriesList.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if(e.getStateChange() == ItemEvent.SELECTED) {
-                    Object item = e.getItem();
-                    if (item.equals(intArray[214])){
-                        currencyType.setText(symbol);
-                    } else if (item.equals(intArray[1])){
-                        currencyType.setText("&");
-                    }
-                }
-            }
-        });
-
-         */
-
-        // Create a currency for USD
-        Currency cur = Currency.getInstance("USD");
-        // Get and print the symbol of the currency
-        String symbol = cur.getSymbol();
-
-        //Default will be ABK. I will set that up after entering in all of the currencies.
-        //No item event need occur for the default.
-
         countriesList.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -937,6 +913,106 @@ public class CurrenciesList extends JPanel {
                         currencyType.setText("Le");
                     } else if (item.equals(intArray[177])){
                         currencyType.setText("XAG");
+                    } else if (item.equals(intArray[178])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[179])){
+                        currencyType.setText("Sk");
+                    } else if (item.equals(intArray[180])){
+                        currencyType.setText("");
+                    } else if (item.equals(intArray[181])){
+                        currencyType.setText("Si$");
+                    } else if (item.equals(intArray[182])){
+                        currencyType.setText("Sh.so.");
+                    } else if (item.equals(intArray[183])){
+                        currencyType.setText("R");
+                    } else if (item.equals(intArray[184])){
+                        currencyType.setText("₩");
+                    } else if (item.equals(intArray[185])){
+                        currencyType.setText("£");
+                    } else if (item.equals(intArray[186])){
+                        currencyType.setText("₧");
+                    } else if (item.equals(intArray[187])){
+                        currencyType.setText("₨");
+                    } else if (item.equals(intArray[188])){
+                        currencyType.setText("£Sd");
+                    } else if (item.equals(intArray[189])){
+                        currencyType.setText("£SD");
+                    } else if (item.equals(intArray[190])){
+                        currencyType.setText("£SD");
+                    } else if (item.equals(intArray[191])){
+                        currencyType.setText("ƒ");
+                    } else if (item.equals(intArray[192])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[193])){
+                        currencyType.setText("E");
+                    } else if (item.equals(intArray[194])){
+                        currencyType.setText("kr");
+                    } else if (item.equals(intArray[195])){
+                        currencyType.setText("CHF");
+                    } else if (item.equals(intArray[196])){
+                        currencyType.setText("£S");
+                    } else if (item.equals(intArray[197])){
+                        currencyType.setText("£S");
+                    } else if (item.equals(intArray[198])){
+                        currencyType.setText("SM");
+                    } else if (item.equals(intArray[199])){
+                        currencyType.setText("TSh");
+                    } else if (item.equals(intArray[200])){
+                        currencyType.setText("฿");
+                    } else if (item.equals(intArray[201])){
+                        currencyType.setText("T$");
+                    } else if (item.equals(intArray[202])){
+                        currencyType.setText("pуб/р");
+                    } else if (item.equals(intArray[203])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[204])){
+                        currencyType.setText("د.ت");
+                    } else if (item.equals(intArray[205])){
+                        currencyType.setText("₺");
+                    } else if (item.equals(intArray[206])){
+                        currencyType.setText("₺");
+                    } else if (item.equals(intArray[207])){
+                        currencyType.setText("T");
+                    } else if (item.equals(intArray[208])){
+                        currencyType.setText("m");
+                    } else if (item.equals(intArray[209])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[210])){
+                        currencyType.setText("USh");
+                    } else if (item.equals(intArray[211])){
+                        currencyType.setText("USh");
+                    } else if (item.equals(intArray[212])){
+                        currencyType.setText("₴");
+                    } else if (item.equals(intArray[213])){
+                        currencyType.setText("د.إ");
+                    } else if (item.equals(intArray[214])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[215])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[216])){
+                        currencyType.setText("$");
+                    } else if (item.equals(intArray[217])){
+                        currencyType.setText("сум");
+                    } else if (item.equals(intArray[218])){
+                        currencyType.setText("VT");
+                    } else if (item.equals(intArray[219])){
+                        currencyType.setText("Bs");
+                    } else if (item.equals(intArray[220])){
+                        currencyType.setText("Bs.F");
+                    } else if (item.equals(intArray[221])){
+                        currencyType.setText("Bs.S");
+                    } else if (item.equals(intArray[222])){
+                        currencyType.setText("₫");
+                    } else if (item.equals(intArray[223])){
+                        currencyType.setText("CFA");
+                    } else if (item.equals(intArray[224])){
+                        currencyType.setText("﷼");
+                    } else if (item.equals(intArray[225])){
+                        currencyType.setText("din.");
+                    } else if (item.equals(intArray[226])){
+                        currencyType.setText("ZK");
+                    } else if (item.equals(intArray[227])){
+                        currencyType.setText("$");
                     }
                 }
             }
