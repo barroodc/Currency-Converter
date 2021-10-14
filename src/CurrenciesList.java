@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class CurrenciesList extends JPanel {
+public class CountriesList extends JPanel {
     public static JComboBox countriesList;
     public static JComboBox countriesList2;
     public static ImageIcon[] images;
@@ -242,7 +242,7 @@ public class CurrenciesList extends JPanel {
     public static  String[] countries = s.split("\\s");
 
     protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = CurrenciesList.class.getResource(path);
+        java.net.URL imgURL = CountriesList.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
@@ -524,11 +524,13 @@ public class CurrenciesList extends JPanel {
         JButton lERates = new JButton("Live Exchange Rates");
         Dimension size2 = lERates.getPreferredSize();
         lERates.setBounds(300, 180, size2.width, size2.height);
-        Icon icon = new ImageIcon("/Users/christopher/Desktop/switch1.png");
-        JButton theSwitch = new JButton(icon);
         JButton convert = new JButton("Convert");
         Dimension size3 = convert.getPreferredSize();
         convert.setBounds(1000,500,size.width,size3.height);
+        Icon icon = new ImageIcon("/Users/christopher/Desktop/switch1.png");
+        JButton theSwitch = new JButton(icon);
+
+
 
 
         JLabel amount = new JLabel("Amount");
@@ -1032,7 +1034,7 @@ public class CurrenciesList extends JPanel {
 
         frame.add(hERates);
         frame.add(lERates);
-        frame.add(theSwitch);
+        frame.add(theSwitch).setBounds(715,315,50,50);
         frame.add(convert);
         frame.add(amount);
         frame.add(from);
